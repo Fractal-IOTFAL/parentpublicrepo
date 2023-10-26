@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Trigger worflow in child repo
       - uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.REPO2_DISPATCH_TOKEN }}
