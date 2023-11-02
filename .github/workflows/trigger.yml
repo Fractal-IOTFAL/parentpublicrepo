@@ -17,6 +17,12 @@ jobs:
         app_id: ${{ secrets.APP_ID }}
         # GitHub App private key
         private_key: ${{ secrets.PRIVATE_KEY }}
+
+    - name: Use the token
+      env:
+        GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+      run: |
+        gh api octocat        
     
     # - uses: actions/github-script@v6
     #   with:
