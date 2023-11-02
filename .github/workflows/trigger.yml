@@ -26,7 +26,7 @@ jobs:
     
     - uses: actions/github-script@v6
       with:
-        github-token: ${{ GH_TOKEN }}
+        github-token: ${{ env.GH_TOKEN }}
         script: |
           await github.rest.actions.createWorkflowDispatch({
             owner: 'Fractal-IOTFAL',
