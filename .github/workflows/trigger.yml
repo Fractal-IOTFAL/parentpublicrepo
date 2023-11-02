@@ -20,7 +20,7 @@ jobs:
     
     - uses: actions/github-script@v6
       with:
-        github-token: ${{ steps.app-token.outputs.token }}
+        github-token: ${{ secrets.REPO2_DISPATCH_TOKEN }}
         script: |
           await github.rest.actions.createWorkflowDispatch({
             owner: 'Fractal-IOTFAL',
