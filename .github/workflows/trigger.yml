@@ -16,7 +16,7 @@ jobs:
         # GitHub App ID
         app_id: ${{ secrets.APP_ID }}
         # GitHub App private key
-        private_key: ${{ secrets.APP_SECRET }}
+        private_key: ${{ secrets.PRIVATE_KEY }}
     
     - uses: actions/github-script@v6
       with:
