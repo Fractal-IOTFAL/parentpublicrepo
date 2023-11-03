@@ -19,9 +19,10 @@ jobs:
       - name: Use the obtained token
         run: |
           curl -X POST -H 'Content-Type: application/json' \
-            -d '{"context":"test","state":"success"}' \
-            -d '{"event_type": "workflow-trigger", "client_payload": {"key": "value"}}'
-            "https://api.github.com/repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA?access_token=$GITHUB_TOKEN"
+            -d '{"event_type": "workflow-trigger", "client_payload": {"key": "value"}}' \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/dispatches" \
+            -H "Authorization: token $GITHUB_TOKEN"
+
         env:
           GITHUB_TOKEN: ${{ steps.githubAppAuth.outputs.token }}
     # - uses: actions/create-github-app-token@v1.1.4
