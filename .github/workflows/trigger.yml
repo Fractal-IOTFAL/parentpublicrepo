@@ -37,7 +37,7 @@ jobs:
       id: githubAppAuth
       run: |
           TOKEN="$(npx obtain-github-app-installation-access-token ci ${{ secrets.GH_APP_CREDENTIALS_TOKEN_NEW }})"
-          echo "::add-mask::$TOKEN"
+          echo "$TOKEN"
           echo "::set-output name=token::$TOKEN"
         
     - run: |
